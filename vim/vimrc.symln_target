@@ -1,0 +1,68 @@
+" TODO 
+"   remap window switching
+
+imap jk <esc>
+
+set mouse=a
+set nocompatible
+set clipboard=unnamed
+syntax on
+set encoding=utf-8
+execute pathogen#infect()
+filetype plugin indent on
+set number
+
+"''''''''''''''''''''''''''''
+" Powerline
+"'''''''''''
+python import sys; sys.path.append("/Users/brett/Library/Python/2.7/site-packages")
+source /Users/brett/Library/Python/2.7/lib/python/site-packages/Powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
+
+"''''''''''''''''''''''''''''
+" NERDTree
+"''''''''''
+    " automatically load NERDTree and toggle away from it
+autocmd VimEnter * NERDTree | NERDTreeToggle
+    " close if only window left on exit
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
+    " remap NERDtree
+map <F1> :NERDTreeToggle<CR>
+
+"" Whitespace
+set nowrap
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set backspace=indent,eol,start
+
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+
+map <F7> :nohl<CR>
+
+set colorcolumn=+1
+
+"'''''''''''
+" Solarized
+"'''''''''''
+let g:solarized_termtrans = 1
+"let g:solarized_termcolors = 256
+set background=dark
+colorscheme solarized
+
+"'''''''''
+" Buffers
+"'''''''''
+    " shortcut to switch buffers
+map <F2> :ls<CR>:b<Space>
+
+"''''''''''
+" Movement
+"''''''''''
+map <F8> <PageDown>
+map <F9> <PageUp>
+

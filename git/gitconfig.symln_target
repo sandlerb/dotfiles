@@ -1,0 +1,19 @@
+[user]
+	name = Brett Sandler
+        email = sandler.brett@gmail.com
+
+[color]
+    diff = auto
+    branch = auto
+    status = auto
+    interactive = auto
+
+[alias]
+    status = status -sb
+    tags = tag -l
+    remotes = remote -v
+    branches = branch -a
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[core]
+	excludesfile = /Users/brett/.gitignore
+	editor = vi

@@ -1,0 +1,37 @@
+export ZSHFILES=$HOME/.dotfiles
+
+# Source training wheels
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Put your secret (otaku) config here
+if [[ -a ~/.localrc ]]
+    then
+        source ~/.localrc
+fi
+
+# Glob those sweet, sweet config files
+typeset -U config_files
+config_files=($ZSHFILES/**/*.zsh)
+
+# Load config files
+for file in ${(M)config_files}
+do
+    source $file
+done
+
+unset config_files
+
+# Preferred #
+export EDITOR='vim'
+
+# Compilation flags #
+export DEBUG=1
+
+alias vi="vim"
+
+# Notes
+#
+# replace all instances in a directory
+#   find . -name "*.c" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'

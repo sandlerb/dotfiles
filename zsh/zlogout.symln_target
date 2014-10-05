@@ -1,0 +1,10 @@
+#
+# Executes commands at logout.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# zlogin
+#
+# this is sourced at logout, so use it for messages or file deletion
