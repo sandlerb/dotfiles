@@ -12,7 +12,7 @@ symlinked as `$HOME/.{file}`.
 ## Etc
 
 ### These are not my dotfiles
-Much of this is from @holman's dotfiles and I also like to pinch a line or three from @peplin's dotfiles.  Some of the comments and base files are from zprezto.
+Much of this is from [@holman][@1]'s [dotfiles][l1] and I also like to pinch a line or three from [@peplin][@2]'s [dotfiles][l2].  Some of the comments and base files are from [prezto][l3].
 
 ### TODO
 * symlink /etc/ zsh files
@@ -20,5 +20,12 @@ Much of this is from @holman's dotfiles and I also like to pinch a line or three
 * move zprezto stuff into dotfiles
 * get rid of zprezto
 * integrate mackup
-* link to the dotfile repos mentioned above
 * version control .vim folder
+
+
+[@1]: https://github.com/holman
+[@2]: https://github.com/peplin
+
+[l1]: https://github.com/holman/dotfiles
+[l2]: https://github.com/peplin/dotfiles
+[l3]: https://github.com/sorin-ionescu/prezto
