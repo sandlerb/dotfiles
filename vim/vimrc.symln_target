@@ -2,6 +2,7 @@
 "   remap window switching
 
 imap jk <esc>
+imap kj <esc>
 
 set mouse=a
 set nocompatible
@@ -66,3 +67,5 @@ map <F2> :ls<CR>:b<Space>
 map <F8> <PageDown>
 map <F9> <PageUp>
 
+"press space to insert one character then exit insert mode
+nmap <Space> i_<Esc>r
