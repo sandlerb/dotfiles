@@ -45,13 +45,12 @@ set ignorecase
 
 map <F7> :nohl<CR>
 
-set colorcolumn=+1
+set colorcolumn=80
 
 "'''''''''''
 " Solarized
 "'''''''''''
 let g:solarized_termtrans = 1
-"let g:solarized_termcolors = 256
 set background=dark
 colorscheme solarized
 
