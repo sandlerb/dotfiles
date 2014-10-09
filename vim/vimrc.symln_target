@@ -3,7 +3,7 @@
 
 imap jk <esc>
 imap kj <esc>
-
+ 
 set mouse=a
 set nocompatible
 set clipboard=unnamed
@@ -45,7 +45,7 @@ set ignorecase
 
 map <F7> :nohl<CR>
 
-set colorcolumn=80
+set colorcolumn=80,81
 
 "'''''''''''
 " Solarized
