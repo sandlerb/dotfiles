@@ -2,11 +2,10 @@
 "   remap window switching
 
 "" Map escape
-imap jk <esc>
-imap JK <esc>
-imap kj <esc>
-imap KJ <esc>
-
+inoremap jk <esc>
+inoremap JK <esc>
+inoremap kj <esc>
+inoremap KJ <esc>
 
 
 "''''''''''''''"
@@ -56,18 +55,13 @@ set nofoldenable
 "" Mappings ""
 map <F7> :nohl<CR>
 
+    "follow pattern for traversing search results with undo/redo
 nnoremap U <c-r>
+    "press space to insert one character then exit insert mode
+nnoremap <Space> i_<Esc>r
 
-"press space to insert one character then exit insert mode
-nmap <Space> i_<Esc>r
-
-"" Buffers ""
-    " shortcut to switch buffers
-"map <F2> :ls<CR>:b<Space>
-
-"" Movement ""
-map <F8> <PageDown>
-map <F9> <PageUp>
+noremap <F8> <PageDown>
+noremap <F9> <PageUp>
 
 
 
