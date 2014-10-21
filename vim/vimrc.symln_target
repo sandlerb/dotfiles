@@ -53,7 +53,10 @@ set cursorline
 set foldmethod=syntax
 set nofoldenable
 
+"" Mappings ""
 map <F7> :nohl<CR>
+
+nnoremap U <c-r>
 
 "press space to insert one character then exit insert mode
 nmap <Space> i_<Esc>r
