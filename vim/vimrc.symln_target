@@ -7,6 +7,10 @@ inoremap JK <esc>
 inoremap kj <esc>
 inoremap KJ <esc>
 
+vnoremap jk <esc>
+vnoremap JK <esc>
+vnoremap kj <esc>
+vnoremap KJ <esc>
 
 "''''''''''''''"
 "  VIM OPTIONS "
