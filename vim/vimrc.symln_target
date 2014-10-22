@@ -76,7 +76,7 @@ nnoremap U <c-r>
 nnoremap <Space> i_<Esc>r
 
     "one key-stroke to move to the end of a line
-nnoremap 4 $
+nmap 4 $
 
     "window switching
 noremap <c-h> <c-w>h
