@@ -13,6 +13,7 @@ vnoremap JK <esc>
 vnoremap kj <esc>
 vnoremap KJ <esc>
 
+
 "''''''''''''''"
 "  VIM OPTIONS "
 "''''''''''''''"
@@ -29,6 +30,7 @@ syntax on
 filetype on
 filetype plugin indent on
 
+
 "" Whitespace ""
 filetype indent on
 set nowrap
@@ -38,12 +40,15 @@ set tabstop=4
 set softtabstop=4
 set backspace=indent,eol,start
 
+
 "" Searching ""
 set incsearch
 set ignorecase
 
+
 "" Completion ""
 set wildmenu
+
 
 "" Layout ""
 set colorcolumn=80,81
@@ -51,19 +56,25 @@ set number
 set hlsearch
 set laststatus=2
 set cursorline
-"set cursorcolumn
+
 
 "" Folding ""
 set foldmethod=syntax
 set nofoldenable
 
+
 "" Mappings ""
+    "make it easy to clear highlighting
 map <F7> :nohl<CR>
 
     "follow pattern for traversing search results with undo/redo
 nnoremap U <c-r>
+
     "press space to insert one character then exit insert mode
 nnoremap <Space> i_<Esc>r
+
+    "one key-stroke to move to the end of a line
+nnoremap 4 $
 
     "window switching
 noremap <c-h> <c-w>h
@@ -71,9 +82,9 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 
+    "help I don't have page up or down keys
 noremap <F8> <PageDown>
 noremap <F9> <PageUp>
-
 
 
 "'''''''''''"
@@ -85,13 +96,17 @@ python import sys; sys.path.append("/Users/brett/Library/Python/2.7/site-package
 source /Users/brett/Library/Python/2.7/lib/python/site-packages/Powerline/bindings/vim/plugin/powerline.vim
 let g:Powerline_symbols = 'fancy'
 
+
 "" NERDTree ""
     " automatically load NERDTree and toggle away from it
 autocmd VimEnter * NERDTree | NERDTreeToggle
+
     " close if only window left on exit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
+
     " remap NERDtree
 map <F1> :NERDTreeToggle<CR>
+
 
 "" Solarized ""
 let g:solarized_termtrans = 1
