@@ -56,6 +56,8 @@ set number
 set hlsearch
 set laststatus=2
 set cursorline
+    "Don't highlight my last search everytime I source this
+nohl
 
 
 "" Folding ""
