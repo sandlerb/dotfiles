@@ -24,6 +24,7 @@ set mouse=a
 set nocompatible
 set clipboard=unnamed
 set encoding=utf-8
+set showcmd
 
 syntax enable
 syntax on
