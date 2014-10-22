@@ -19,8 +19,7 @@ Much of this is from [@holman][@1]'s [dotfiles][l1] and I also like to pinch a l
 * clean up whitespace
 * move zprezto stuff into dotfiles
 * get rid of zprezto
-* integrate mackup
-* version control .vim folder
+* integrate mackup so it doesn't symlink everything to DropBox
 
 
 [@1]: https://github.com/holman
