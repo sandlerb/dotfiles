@@ -1,0 +1,63 @@
+# TODO
+#   add upstream and downstream counts
+#   add indicator for merge, bisect, etc.
+
+autoload colors && colors
+
+# Use homebrew git if it exists
+if (( $+commands[git] ))
+then
+    git="$commands[git]"
+else
+    git=/usr/bin/git
+fi
+
+# Print the current branch
+git_branch() {
+    echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+}
+
+git_unstaged() {
+    st=$($git symbolic-ref status 2>/dev/null | tail -n 1)
+    if [[ $st == "" ]]
+    then
+        echo ""
+    else
+        if [[ $st =~ clean ]]
+        then
+            echo " %{$fg[red]%}●%{$reset_color%}"
+        fi
+    fi
+}
+
+git_staged_real() {
+
+}
+
+l_brack() {
+    echo "%F{white}[%f"
+}
+
+r_brack() {
+    echo "%F{white}]%f"
+}
+
+git_staged() {
+    unpushed=$($git cherry -v @{upstream} 2>/dev/null)
+    if [[ $unpushed == "" ]]
+    then
+        echo "$(r_brack)"
+    else
+        echo " %{$fg[green]%}●%{$reset_color%}$(r_brack)"
+    fi
+}
+
+git_info() {
+    echo "$(l_brack)%F{yellow}$(git_branch)$(git_unstaged)$(git_staged)"
+}
+
+directory() {
+    echo "%F{blue}%2~"
+}
+
+PROMPT=$'$(directory) $(git_info) %F{blue}❯%f ' 
