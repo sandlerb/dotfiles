@@ -6,6 +6,8 @@
 "  VIM OPTIONS "
 "''''''''''''''"
 
+set nocompatible
+
 syntax enable
 syntax on
 filetype on
@@ -13,7 +15,6 @@ filetype plugin indent on
 execute pathogen#infect()
 
 set mouse=a
-set nocompatible
 set clipboard=unnamed
 set encoding=utf-8
 set showcmd
