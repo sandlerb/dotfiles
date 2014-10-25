@@ -1,3 +1,6 @@
 [submodule "vim/vim.symln_target/bundle/vim-airline"]
 	path = vim/vim.symln_target/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "vim/vim.symln_target/bundle/command-t"]
+	path = vim/vim.symln_target/bundle/command-t
+	url = git://git.wincent.com/command-t.git
