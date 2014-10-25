@@ -2,22 +2,14 @@
 "   probs a cool ASCII art header
 
 
-"" Map escape
-inoremap jk <esc>
-inoremap JK <esc>
-inoremap kj <esc>
-inoremap KJ <esc>
-
-vnoremap jk <esc>
-vnoremap JK <esc>
-vnoremap kj <esc>
-vnoremap KJ <esc>
-
-
 "''''''''''''''"
 "  VIM OPTIONS "
 "''''''''''''''"
 
+syntax enable
+syntax on
+filetype on
+filetype plugin indent on
 execute pathogen#infect()
 
 set mouse=a
@@ -26,10 +18,6 @@ set clipboard=unnamed
 set encoding=utf-8
 set showcmd
 
-syntax enable
-syntax on
-filetype on
-filetype plugin indent on
 
 
 "" Whitespace ""
@@ -52,6 +40,7 @@ set wildmenu
 
 
 "" Layout ""
+set title
 set colorcolumn=80,81
 set number
 set hlsearch
@@ -67,7 +56,19 @@ set nofoldenable
 
 
 "" Mappings ""
-    "make it easy to clear highlighting
+
+inoremap jk <esc>
+inoremap JK <esc>
+inoremap kj <esc>
+inoremap KJ <esc>
+
+vnoremap jk <esc>
+vnoremap JK <esc>
+vnoremap kj <esc>
+vnoremap KJ <esc>
+
+nnoremap ; :
+
 map <F7> :nohl<CR>
 
     "follow pattern for traversing search results with undo/redo
@@ -96,7 +97,8 @@ noremap <F9> <PageUp>
 
 "" vim-airline ""
 
-if !exists('g:airline_symbols') " check for airline symbols
+    " check for airline symbols
+if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
