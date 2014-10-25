@@ -46,18 +46,24 @@ git_staged() {
     unpushed=$($git cherry -v @{upstream} 2>/dev/null)
     if [[ $unpushed == "" ]]
     then
-        echo "$(r_brack)"
+        echo ""
     else
-        echo " %{$fg[green]%}●%{$reset_color%}$(r_brack)"
+        echo " %{$fg[green]%}●%{$reset_color%}"
     fi
 }
 
 git_info() {
-    echo "$(l_brack)%F{yellow}$(git_branch)$(git_unstaged)$(git_staged)"
+    if [ -d .git 2>/dev/null ]
+    then
+        echo "$(l_brack)%F{yellow}$(git_branch)$(git_unstaged)$(git_staged)$(r_brack) "
+    else
+        echo ""
+    fi
 }
 
 directory() {
     echo "%F{blue}%2~"
 }
 
-PROMPT=$'$(directory) $(git_info) %F{blue}❯%f ' 
+PROMPT=$'$(directory) $(git_info)%F{blue}❯%f '
+
