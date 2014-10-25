@@ -4,6 +4,9 @@
 
 autoload colors && colors
 
+# enable substring expansion, this is important
+setopt promptsubst
+
 # Use homebrew git if it exists
 if (( $+commands[git] ))
 then
@@ -66,5 +69,5 @@ sentinel() {
     echo "%F{blue}❯%f"
 }
 
-PROMPT=$'$(directory) $(git_info)$(sentinel) '
+export PROMPT=$'$(directory) $(git_info)$(sentinel) '
 
