@@ -57,8 +57,8 @@ set number
 set hlsearch
 set laststatus=2
 set cursorline
-    "Don't highlight my last search everytime I source this
-nohl
+
+nohl                    "Don't highlight my last search everytime I source this
 
 
 "" Folding ""
@@ -94,11 +94,14 @@ noremap <F9> <PageUp>
 "  PLUGINS  "
 "'''''''''''"
 
-"" Powerline ""
-python import sys; sys.path.append("/Users/brett/Library/Python/2.7/site-packages")
-source /Users/brett/Library/Python/2.7/lib/python/site-packages/Powerline/bindings/vim/plugin/powerline.vim
-let g:Powerline_symbols = 'fancy'
+"" vim-airline ""
 
+if !exists('g:airline_symbols') " check for airline symbols
+    let g:airline_symbols = {}
+endif
+
+let g:airline_powerline_fonts=1            " enable powerline symbols
+let g:airline_them='solarized_dark'        " use solarized
 
 "" NERDTree ""
     " automatically load NERDTree and toggle away from it
@@ -107,7 +110,6 @@ autocmd VimEnter * NERDTree | NERDTreeToggle
     " close if only window left on exit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
-    " remap NERDtree
 map <F1> :NERDTreeToggle<CR>
 
 
