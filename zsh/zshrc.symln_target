@@ -1,4 +1,4 @@
-export ZSHFILES=$HOME/.dotfiles
+ZSHFILES=$HOME/.dotfiles
 
 # Source training wheels
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
