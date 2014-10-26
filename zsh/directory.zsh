@@ -8,4 +8,5 @@ setopt AUTO_NAME_DIRS       # Auto add variable-stored paths to ~ list.
 setopt MULTIOS              # Write to multiple descriptors.
 setopt EXTENDED_GLOB        # Use extended globbing syntax.
 unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
-                            # Use >! and >>! to bypass.
+
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
