@@ -114,9 +114,6 @@ let g:airline_powerline_fonts=1            " enable powerline symbols
 let g:airline_them='solarized_dark'        " use solarized
 
 "" NERDTree ""
-    " automatically load NERDTree and toggle away from it
-autocmd VimEnter * NERDTree | NERDTreeToggle
-
     " close if only window left on exit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
