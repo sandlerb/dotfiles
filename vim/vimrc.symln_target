@@ -21,6 +21,7 @@ set showcmd     "show whatever command we're typing
 set undofile    "make an undo file so we can undo/redo between sessions
 "set relativenumber
 set hidden      "hide buffers instead of closing them
+set ttyfast
 
 
 let mapleader="'"
