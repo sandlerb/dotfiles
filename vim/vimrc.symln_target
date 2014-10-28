@@ -98,6 +98,9 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 
+    "cycle windows
+nnoremap = <c-w>w
+
     "help I don't have page up or down keys
 noremap <F8> <PageDown>
 noremap <F9> <PageUp>
