@@ -81,7 +81,7 @@ nnoremap ; :
     "shortcut for switching buffers
 noremap <leader>b :ls<CR>:b<Space>
 
-nnoremap <leader><space> :nohl<cr>
+nnoremap <leader>n :nohl<cr>
 
     "follow pattern for traversing search results with undo/redo
 nnoremap U <c-r>
