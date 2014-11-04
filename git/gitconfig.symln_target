@@ -17,3 +17,5 @@
 [core]
 	excludesfile = /Users/brett/.gitignore
 	editor = vi
+[push]
+	default = simple
