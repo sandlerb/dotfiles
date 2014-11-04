@@ -17,5 +17,6 @@
 [core]
 	excludesfile = /Users/brett/.gitignore
 	editor = vi
+	autocrlf = input
 [push]
 	default = simple
