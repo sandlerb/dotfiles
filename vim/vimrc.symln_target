@@ -11,7 +11,7 @@ set nocompatible
 syntax enable
 syntax on
 filetype off
-execute pathogen#infect()
+silent! execute pathogen#infect()
 filetype plugin indent on
 
 set mouse=a
@@ -119,6 +119,7 @@ endif
 
 silent! let g:airline_powerline_fonts=1            " enable powerline symbols
 silent! let g:airline_them='solarized_dark'        " use solarized
+silent! let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree ""
     " close if only window left on exit
