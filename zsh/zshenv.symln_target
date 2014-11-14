@@ -8,6 +8,10 @@ export PATH=$PATH:/usr/local/Cellar/autoconif/2.69/share/autoconf
 export PATH=$PATH:/Library/Embedded/gcc-arm-none-eabi-4_8-2014q2/bin
 export PATH=$PATH:/usr/local/heroku/bin:$PATH
 
+# for macports
+export PATH=$PATH:/opt/local/bin
+export PATH=$PATH:/opt/local/sbin
+
 # Microchip
 #   1. XC8 compiler
 #   2. CLI for programming PIC microcontrollers
