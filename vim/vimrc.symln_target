@@ -37,6 +37,7 @@ set softtabstop=4
 set backspace=indent,eol,start
 set autoindent
 
+set fillchars+=vert:\ 
 
 "" Searching ""
 set incsearch
