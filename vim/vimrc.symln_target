@@ -124,7 +124,7 @@ if !exists('g:airline_symbols')
 endif
 
 silent! let g:airline_powerline_fonts=1            " enable powerline symbols
-silent! let g:airline_them='solarized_dark'        " use solarized
+silent! let g:airline_them='solarized_brett'    " slightly modified solarized
 silent! let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree ""
