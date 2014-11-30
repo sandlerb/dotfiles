@@ -42,6 +42,7 @@ set fillchars+=vert:\
 "" Searching ""
 set incsearch
 set ignorecase
+set smartcase   "Override ignorecase if search string contains uppercase letters
 
 
 "" Completion ""
