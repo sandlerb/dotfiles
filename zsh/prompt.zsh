@@ -61,6 +61,14 @@ git_info() {
     fi
 }
 
+current_time() {
+    echo "%F{green}%D{%H:%M:%S}%{$reset_color%}"
+}
+
+pipe_divider() {
+    echo "%F{white}|%{$reset_color%}"
+}
+
 directory() {
     echo "%F{blue}%2~"
 }
@@ -69,5 +77,5 @@ sentinel() {
     echo "%F{blue}❯%f"
 }
 
-export PROMPT=$'$(directory) $(git_info)$(sentinel) '
+export PROMPT=$'$(current_time) $(directory) $(git_info)$(sentinel) '
 
