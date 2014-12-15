@@ -62,6 +62,16 @@ set cursorline
 
 nohl                    "Don't highlight my last search everytime I source this
 
+" Highlight conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Shortcut to jump to next conflict marker
+nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+
+" lines to scroll when cursor leaves screen
+set scrolljump=3
+" minimum lines to keep above and below cursor
+set scrolloff=3
 
 "" Folding ""
 set foldmethod=syntax
@@ -82,27 +92,30 @@ vnoremap KJ <esc>
 
 nnoremap ; :
 
-    "shortcut for switching buffers
+" shortcut for switching buffers
 noremap <leader>b :ls<CR>:b<Space>
 
 nnoremap <leader>n :nohl<cr>
 
-    "follow pattern for traversing search results with undo/redo
+" follow pattern for traversing search results with undo/redo
 nnoremap U <c-r>
 
-    "press space to insert one character then exit insert mode
+" press space to insert one character then exit insert mode
 nnoremap <Space> i_<Esc>r
 
-    "window switching
+" yank from the cursor to the end of the line, to be consistent with C and D
+nnoremap Y y$
+
+" window switching
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 
-    "cycle windows
+" cycle windows
 nnoremap = <c-w>w
 
-    "help I don't have page up or down keys
+" help I don't have page up or down keys
 noremap <F8> <PageDown>
 noremap <F9> <PageUp>
 
@@ -115,10 +128,11 @@ noremap <F9> <PageUp>
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans = 1
+highlight SignColumn ctermbg=0
 
 "" vim-airline ""
 
-    " check for airline symbols
+" check for airline symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -128,7 +142,7 @@ silent! let g:airline_them='solarized_brett'    " slightly modified solarized
 silent! let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree ""
-    " close if only window left on exit
+" close if only window left on exit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
 map <F1> :NERDTreeToggle<CR>

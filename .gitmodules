@@ -4,3 +4,6 @@
 [submodule "vim/vim.symln_target/bundle/command-t"]
 	path = vim/vim.symln_target/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim/vim.symln_target/bundle/vim-gitgutter"]
+	path = vim/vim.symln_target/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
