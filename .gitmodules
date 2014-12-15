@@ -10,3 +10,6 @@
 [submodule "vim/vim.symln_target/bundle/nerdtree"]
 	path = vim/vim.symln_target/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/vim.symln_target/bundle/vim-colors-solarized"]
+	path = vim/vim.symln_target/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
