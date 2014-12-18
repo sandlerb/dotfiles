@@ -9,6 +9,7 @@
 "  VIM OPTIONS "
 "''''''''''''''"
 
+" disable legacy vi compatibility in favor of features
 set nocompatible
 
 syntax enable
@@ -44,7 +45,8 @@ set fillchars+=vert:\
 "" Searching ""
 set incsearch
 set ignorecase
-set smartcase   "Override ignorecase if search string contains uppercase letters
+" override ignorecase if search string contains uppercase letters
+set smartcase
 
 
 "" Completion ""
@@ -131,12 +133,15 @@ let g:solarized_termtrans = 1
 
 
 "" GitGutter ""
-let g:gitgutter_max_signs = 200  " default value
+" Show at most this many signs (don't want to slow vim down)
+let g:gitgutter_max_signs = 300
+" match the SignColumn bg color to the number column
 highlight SignColumn ctermbg=0
 highlight GitGutterAdd ctermbg=0 ctermfg=DarkGreen
 highlight GitGutterDelete ctermbg=0 ctermfg=DarkRed
 highlight GitGutterChange ctermbg=0 ctermfg=DarkYellow
 highlight GitGutterChangeDelete ctermbg=0 ctermfg=DarkMagenta
+" use some thicker symbols so the color really ~shines~
 let g:gitgutter_sign_added='✚'
 let g:gitgutter_sign_removed='✖'
 let g:gitgutter_sign_modified='✱'
