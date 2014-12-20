@@ -1,9 +1,6 @@
 ZSHFILES=$HOME/.dotfiles
 
-# Source training wheels
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+autoload -U colors && colors
 
 # Put your secret (otaku) config here
 if [[ -a ~/.localrc ]]

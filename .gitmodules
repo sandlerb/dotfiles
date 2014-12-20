@@ -13,3 +13,6 @@
 [submodule "vim/vim.symln_target/bundle/vim-colors-solarized"]
 	path = vim/vim.symln_target/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "zsh/zsh-history-substring-search"]
+	path = zsh/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
