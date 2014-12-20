@@ -26,3 +26,5 @@ export FPATH=$FPATH:/Users/brett/.zsh/functions
 
 export GOPATH=$HOME
 
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
