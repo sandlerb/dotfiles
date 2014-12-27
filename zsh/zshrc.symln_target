@@ -26,8 +26,6 @@ export EDITOR='vim'
 # Compilation flags #
 export DEBUG=1
 
-alias vi="vim"
-
 # Notes
 #
 # replace all instances in a directory

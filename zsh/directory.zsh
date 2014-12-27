@@ -10,5 +10,3 @@ setopt EXTENDED_GLOB        # Use extended globbing syntax.
 unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
 
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
-alias ls="ls -G"
