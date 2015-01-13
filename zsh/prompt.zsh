@@ -26,7 +26,7 @@ r_brack() {
 
 # Print the current branch
 git_branch() {
-    echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+    echo $($git rev-parse --symbolic-full-name --abbrev-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 GIT_STAGED=" %{$fg[green]%}●%{$reset_color%}"
