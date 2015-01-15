@@ -68,7 +68,7 @@ nohl                    "Don't highlight my last search everytime I source this
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Shortcut to jump to next conflict marker
-nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 
 " lines to scroll when cursor leaves screen
 set scrolljump=3
@@ -79,6 +79,7 @@ set scrolloff=3
 set foldmethod=syntax
 set nofoldenable
 
+nnoremap <silent> <leader>s :.s/(\(.*\),[ ]\(.*\))/(\2, \1)/<CR>:nohl<CR>
 
 "" Mappings ""
 
