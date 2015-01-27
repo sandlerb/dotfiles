@@ -21,7 +21,8 @@ done
 unset config_files
 
 # Preferred #
-export EDITOR='vim'
+export EDITOR='mvim -f -v'
+export VISUAL='mvim -f'
 
 # Compilation flags #
 export DEBUG=1
