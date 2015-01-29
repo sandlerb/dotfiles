@@ -74,6 +74,7 @@ nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 set scrolljump=3
 " minimum lines to keep above and below cursor
 set scrolloff=3
+set lazyredraw
 
 "" Folding ""
 set foldmethod=syntax
