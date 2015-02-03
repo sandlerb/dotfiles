@@ -96,6 +96,9 @@ vnoremap KJ <esc>
 
 nnoremap ; :
 
+" shortcut for macros
+nnoremap <leader>q @q
+
 " shortcut for switching buffers
 noremap <leader>b :ls<CR>:b<Space>
 
