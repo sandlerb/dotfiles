@@ -5,3 +5,4 @@ alias vi="mvim -v"
 alias vim="mvim -v"
 
 alias ls='gls --color=auto --group-directories-first -F'
+alias date='gdate'
