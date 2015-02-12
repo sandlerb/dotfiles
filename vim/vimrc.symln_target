@@ -122,6 +122,9 @@ noremap <c-l> <c-w>l
 " cycle windows
 nnoremap = <c-w>w
 
+" rotate windows
+nnoremap <leader>r <c-w><c-r>
+
 " help I don't have page up or down keys
 noremap <F8> <PageDown>
 noremap <F9> <PageUp>
