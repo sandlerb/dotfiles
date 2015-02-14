@@ -158,7 +158,7 @@ let g:gitgutter_sign_modified_removed='↪'
 let g:gitgutter_sign_column_always=1
 " map jumping to changed hunks
 nnoremap <leader>g :GitGutterNextHunk<CR>
-nnoremap <leader>G :GitGutterPrevHunk<CR>
+nnoremap <leader><leader>g :GitGutterPrevHunk<CR>
 
 "" vim-airline ""
 " check for airline symbols
