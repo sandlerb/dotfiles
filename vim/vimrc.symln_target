@@ -73,7 +73,7 @@ nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " lines to scroll when cursor leaves screen
 set scrolljump=3
 " minimum lines to keep above and below cursor
-set scrolloff=3
+set scrolloff=6
 set lazyredraw
 
 "" Folding ""
