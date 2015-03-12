@@ -82,6 +82,9 @@ set nofoldenable
 
 nnoremap <silent> <leader>s :.s/(\(.*\),[ ]\(.*\))/(\2, \1)/<CR>:nohl<CR>
 
+" Recognize .md files as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
 "" Mappings ""
 
 inoremap jk <esc>
