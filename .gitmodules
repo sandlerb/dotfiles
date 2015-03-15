@@ -1,18 +1,9 @@
-[submodule "vim/vim.symln_target/bundle/vim-airline"]
-	path = vim/vim.symln_target/bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
 [submodule "vim/vim.symln_target/bundle/command-t"]
 	path = vim/vim.symln_target/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "vim/vim.symln_target/bundle/vim-gitgutter"]
-	path = vim/vim.symln_target/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim/vim.symln_target/bundle/nerdtree"]
-	path = vim/vim.symln_target/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/vim.symln_target/bundle/vim-colors-solarized"]
-	path = vim/vim.symln_target/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
 [submodule "zsh/zsh-history-substring-search"]
 	path = zsh/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "vim/vim.symln_target/bundle/Vundle.vim"]
+	path = vim/vim.symln_target/bundle/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim

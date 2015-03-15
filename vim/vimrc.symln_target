@@ -12,19 +12,34 @@
 " disable legacy vi compatibility in favor of features
 set nocompatible
 
+filetype off
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" TODO switch to ctrlp and manage with Vunlde
+Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
+
+Plugin 'airblade/vim-gitgutter'             " better editing files managed by git
+Plugin 'altercation/vim-colors-solarized'   " better colors
+Plugin 'bling/vim-airline'                  " better status line
+Plugin 'scrooloose/nerdtree'                " in vim file explorer
+
+" All of your plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
 syntax enable
 syntax on
-filetype off
-silent! execute pathogen#infect()
-filetype plugin indent on
 
 set mouse=a
 set clipboard=unnamed
 set encoding=utf-8
-set showcmd     "show whatever command we're typing
-set undofile    "make an undo file so we can undo/redo between sessions
-set hidden      "hide buffers instead of closing them
-set ttyfast
+set showcmd         " show whatever command we're typing
+set undofile        " make an undo file so we can undo/redo between sessions
+set hidden          " hide buffers instead of closing them
+set ttyfast         " scroll faster
 
 
 let mapleader="'"
