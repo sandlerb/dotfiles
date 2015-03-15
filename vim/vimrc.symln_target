@@ -4,10 +4,8 @@
 "     \_/   \_\  \_\| \_\ rc
 "
 
-
-"''''''''''''''"
-"  VIM OPTIONS "
-"''''''''''''''"
+" first clear any existing autocommands
+autocmd!
 
 " disable legacy vi compatibility in favor of features
 set nocompatible
