@@ -10,6 +10,7 @@ autocmd!
 " disable legacy vi compatibility in favor of features
 set nocompatible
 
+filetype on
 filetype off
 " Vundle()
 " {
