@@ -1,8 +1,8 @@
-"   |\   / /O  __
-"   \ \_/ /__ |  \  ___
-"    \   / \ \||\ \||\ \
-"     \_/   \_\  \_\| \_\ rc
-"
+"   |\   / /O  __              "
+"   \ \_/ /__ |  \  ___        "
+"    \   / \ \||\ \||\ \       "
+"     \_/   \_\  \_\| \_\ rc   "
+"                              "
 
 " first clear any existing autocommands
 autocmd!
@@ -24,6 +24,7 @@ filetype off
     Plugin 'altercation/vim-colors-solarized'   " better colors
     Plugin 'bling/vim-airline'                  " better status line
     Plugin 'scrooloose/nerdtree'                " in vim file explorer
+    Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
 
     " All of your plugins must be added before the following line
     call vundle#end()
@@ -218,6 +219,11 @@ syntax on
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
         map <F1> :NERDTreeToggle<CR>
+    " }
+
+    " CtrlP() {
+        let g:ctrlp_map = '<leader>t'
+        let g:ctrlp_cmd = 'CtrlP'
     " }
 " }
 
