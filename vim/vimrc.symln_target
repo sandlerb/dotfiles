@@ -13,183 +13,214 @@
 set nocompatible
 
 filetype off
+" Vundle()
+" {
+    " Set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+    " TODO switch to ctrlp and manage with Vunlde
+    Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
 
-" TODO switch to ctrlp and manage with Vunlde
-Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
+    Plugin 'airblade/vim-gitgutter'             " better editing files managed by git
+    Plugin 'altercation/vim-colors-solarized'   " better colors
+    Plugin 'bling/vim-airline'                  " better status line
+    Plugin 'scrooloose/nerdtree'                " in vim file explorer
 
-Plugin 'airblade/vim-gitgutter'             " better editing files managed by git
-Plugin 'altercation/vim-colors-solarized'   " better colors
-Plugin 'bling/vim-airline'                  " better status line
-Plugin 'scrooloose/nerdtree'                " in vim file explorer
-
-" All of your plugins must be added before the following line
-call vundle#end()
+    " All of your plugins must be added before the following line
+    call vundle#end()
+" }
 filetype plugin indent on
 
 syntax enable
 syntax on
 
-set mouse=a
-set clipboard=unnamed
-set encoding=utf-8
-set showcmd         " show whatever command we're typing
-set undofile        " make an undo file so we can undo/redo between sessions
-set hidden          " hide buffers instead of closing them
-set ttyfast         " scroll faster
+" System()
+" {
+    " set directory=$HOME/.vimswap//
+    " set undodir=$HOME/.vimundo//
+    set undofile
 
+    "" Creating directories if they don't exist
+    " silent execute '!mkdir -p $HOME/.vimundo'
+    " silent execute '!mkdir -p $HOME/.vimswap'
+" }
 
-let mapleader="'"
+" UI() 
+" {
+    " Init()
+    " {
+        set mouse=a
+        set clipboard=unnamed
+        set encoding=utf-8
+        set showcmd         " show whatever command we're typing
+        set hidden          " hide buffers instead of closing them
+        set ttyfast         " scroll faster
+        set lazyredraw      " only redraw when needed
+        set scrolljump=3    " lines to scroll when cursor leaves screen
+        set scrolloff=6     " minimum lines to keep above and below cursor
+    " }
 
+    " Formatting()
+    " {
+        set nowrap
+        set expandtab
+        set shiftwidth=4
+        set tabstop=4
+        set softtabstop=4
+        set backspace=indent,eol,start
+        set autoindent
 
-"" Whitespace ""
-filetype indent on
-set nowrap
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set backspace=indent,eol,start
-set autoindent
+        " Recognize .md files as markdown
+        au BufRead,BufNewFile *.md set filetype=markdown
+    " }
 
-set fillchars+=vert:\ 
+    " Layout()
+    " {
+        set fillchars+=vert:\ 
+        set title
+        set colorcolumn=80,81
+        set number
+        set hlsearch
+        set laststatus=2
+        set cursorline
+    " }
 
-"" Searching ""
-set incsearch
-set ignorecase
-" override ignorecase if search string contains uppercase letters
-set smartcase
+    " Search_And_Replace()
+    " {
+        set incsearch
+        set ignorecase
 
+        " Override ignorecase if search string contains uppercase letters
+        set smartcase
 
-"" Completion ""
-set wildmenu
-set wildmode=list:longest
+        " Highlight conflict markers
+        match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+    " }
 
+    " Completion()
+    " {
+        set wildmenu
+        set wildmode=list:longest
+    " }
 
-"" Layout ""
-set title
-set colorcolumn=80,81
-set number
-set hlsearch
-set laststatus=2
-set cursorline
+    " Folding()
+    " {
+        set foldmethod=syntax
+        set nofoldenable
+    " }
+" }
 
-nohl                    "Don't highlight my last search everytime I source this
+" Mappings()
+" {
+    " essentials
+    let mapleader="'"
+    nnoremap ; :
 
-" Highlight conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+    " Escape
+    inoremap jk <esc>
+    inoremap JK <esc>
+    inoremap kj <esc>
+    inoremap KJ <esc>
 
-" Shortcut to jump to next conflict marker
-nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+    vnoremap jk <esc>
+    vnoremap JK <esc>
+    vnoremap kj <esc>
+    vnoremap KJ <esc>
 
-" lines to scroll when cursor leaves screen
-set scrolljump=3
-" minimum lines to keep above and below cursor
-set scrolloff=6
-set lazyredraw
+    " shortcut for macros
+    nnoremap <leader>q @q
 
-"" Folding ""
-set foldmethod=syntax
-set nofoldenable
+    " shortcut for switching buffers
+    noremap <leader>b :ls<CR>:b<Space>
 
-nnoremap <silent> <leader>s :.s/(\(.*\),[ ]\(.*\))/(\2, \1)/<CR>:nohl<CR>
+    " shortcut for quick highlight removal
+    nnoremap <leader>n :nohl<cr>
 
-" Recognize .md files as markdown
-au BufRead,BufNewFile *.md set filetype=markdown
+    " follow pattern for traversing search results with undo/redo
+    nnoremap U <c-r>
 
-"" Mappings ""
+    " press space to insert one character then exit insert mode
+    nnoremap <Space> i_<Esc>r
 
-inoremap jk <esc>
-inoremap JK <esc>
-inoremap kj <esc>
-inoremap KJ <esc>
+    " yank from the cursor to the end of the line, to be consistent with C and D
+    nnoremap Y y$
 
-vnoremap jk <esc>
-vnoremap JK <esc>
-vnoremap kj <esc>
-vnoremap KJ <esc>
+    " window switching
+    noremap <c-h> <c-w>h
+    noremap <c-j> <c-w>j
+    noremap <c-k> <c-w>k
+    noremap <c-l> <c-w>l
 
-nnoremap ; :
+    " cycle windows
+    nnoremap = <c-w>w
 
-" shortcut for macros
-nnoremap <leader>q @q
+    " rotate windows
+    nnoremap <leader>r <c-w><c-r>
 
-" shortcut for switching buffers
-noremap <leader>b :ls<CR>:b<Space>
+    " help I don't have page up or down keys
+    noremap <F8> <PageDown>
+    noremap <F9> <PageUp>
 
-nnoremap <leader>n :nohl<cr>
+    " Shortcut to jump to next conflict marker
+    nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 
-" follow pattern for traversing search results with undo/redo
-nnoremap U <c-r>
+    " regex to swap arguments
+    nnoremap <silent> <leader>s :.s/(\(.*\),[ ]\(.*\))/(\2, \1)/<CR>:nohl<CR>
+" }
 
-" press space to insert one character then exit insert mode
-nnoremap <Space> i_<Esc>r
+" Plugins()
+" {
+    " Solarized()
+    " {
+        set background=dark
+        colorscheme solarized
+        let g:solarized_termtrans = 1
+    " }
 
-" yank from the cursor to the end of the line, to be consistent with C and D
-nnoremap Y y$
+    " GitGutter()
+    " {
+        " Show at most this many signs (don't want to slow vim down)
+        let g:gitgutter_max_signs = 300
+        " match the SignColumn bg color to the number column
+        highlight SignColumn ctermbg=0
+        highlight GitGutterAdd ctermbg=0 ctermfg=DarkGreen
+        highlight GitGutterDelete ctermbg=0 ctermfg=DarkRed
+        highlight GitGutterChange ctermbg=0 ctermfg=DarkYellow
+        highlight GitGutterChangeDelete ctermbg=0 ctermfg=DarkMagenta
+        " use some thicker symbols so the color really ~shines~
+        let g:gitgutter_sign_added='✚'
+        let g:gitgutter_sign_removed='✖'
+        let g:gitgutter_sign_modified='✱'
+        let g:gitgutter_sign_modified_removed='↪'
+        " always show sign column
+        let g:gitgutter_sign_column_always=1
+        " map jumping to changed hunks
+        nnoremap <leader>g :GitGutterNextHunk<CR>
+        nnoremap <leader><leader>g :GitGutterPrevHunk<CR>
+    " }
 
-" window switching
-noremap <c-h> <c-w>h
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
+    " Vim-Airline()
+    " {
+        " check for airline symbols
+        if !exists('g:airline_symbols')
+            let g:airline_symbols = {}
+        endif
 
-" cycle windows
-nnoremap = <c-w>w
+        " enable powerline symbols
+        silent! let g:airline_powerline_fonts=1
+        " slightly modified solarized
+        silent! let g:airline_them='solarized_brett'
+        silent! let g:airline#extensions#tabline#enabled = 1
+    " }
 
-" rotate windows
-nnoremap <leader>r <c-w><c-r>
+    " NERDTree()
+    " {
+        " close if only window left on exit
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
-" help I don't have page up or down keys
-noremap <F8> <PageDown>
-noremap <F9> <PageUp>
+        map <F1> :NERDTreeToggle<CR>
+    " }
+" }
 
-
-"'''''''''''"
-"  PLUGINS  "
-"'''''''''''"
-
-"" Solarized ""
-set background=dark
-colorscheme solarized
-let g:solarized_termtrans = 1
-
-
-"" GitGutter ""
-" Show at most this many signs (don't want to slow vim down)
-let g:gitgutter_max_signs = 300
-" match the SignColumn bg color to the number column
-highlight SignColumn ctermbg=0
-highlight GitGutterAdd ctermbg=0 ctermfg=DarkGreen
-highlight GitGutterDelete ctermbg=0 ctermfg=DarkRed
-highlight GitGutterChange ctermbg=0 ctermfg=DarkYellow
-highlight GitGutterChangeDelete ctermbg=0 ctermfg=DarkMagenta
-" use some thicker symbols so the color really ~shines~
-let g:gitgutter_sign_added='✚'
-let g:gitgutter_sign_removed='✖'
-let g:gitgutter_sign_modified='✱'
-let g:gitgutter_sign_modified_removed='↪'
-" always show sign column
-let g:gitgutter_sign_column_always=1
-" map jumping to changed hunks
-nnoremap <leader>g :GitGutterNextHunk<CR>
-nnoremap <leader><leader>g :GitGutterPrevHunk<CR>
-
-"" vim-airline ""
-" check for airline symbols
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-silent! let g:airline_powerline_fonts=1            " enable powerline symbols
-silent! let g:airline_them='solarized_brett'    " slightly modified solarized
-silent! let g:airline#extensions#tabline#enabled = 1
-
-"" NERDTree ""
-" close if only window left on exit
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
-
-map <F1> :NERDTreeToggle<CR>
+nohl    "Don't highlight my last search everytime I source this
