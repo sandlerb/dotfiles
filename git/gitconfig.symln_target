@@ -16,7 +16,7 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [core]
 	excludesfile = /Users/brett/.gitignore
-	editor = /usr/bin/vim
+	editor = vim
 	autocrlf = input
 [push]
 	default = simple
