@@ -136,6 +136,7 @@ syntax on
 
     " shortcut for quick highlight removal
     nnoremap <leader>n :nohl<cr>
+    vnoremap <leader>n :nohl<cr>
 
     " follow pattern for traversing search results with undo/redo
     nnoremap U <c-r>
