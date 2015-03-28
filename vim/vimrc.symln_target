@@ -26,6 +26,7 @@ filetype off
     Plugin 'bling/vim-airline'                  " better status line
     Plugin 'scrooloose/nerdtree'                " in vim file explorer
     Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
+    Plugin 'Valloric/YouCompleteMe'             " code-completion engine
 
     " All of your plugins must be added before the following line
     call vundle#end()
