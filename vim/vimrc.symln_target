@@ -121,9 +121,11 @@ syntax on
     " Escape
     inoremap jk <esc>
     inoremap JK <esc>
+    inoremap Jk <esc>
 
     vnoremap jk <esc>
     vnoremap JK <esc>
+    vnoremap Jk <esc>
 
     " shortcut for macros
     nnoremap <leader>q @q
