@@ -2,6 +2,7 @@
 
 alias gst="git status -sb"
 alias glg="git lg"
+alias gll="git ll"
 alias gc='git commit --verbose'
 alias gd='git diff'
 alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:${_git_log_medium_format}'

@@ -13,6 +13,7 @@
     tags = tag -l
     remotes = remote -v
     branches = branch -a
+    ll = log --graph --pretty=oneline
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [core]
 	excludesfile = /Users/brett/.gitignore
