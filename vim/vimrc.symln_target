@@ -18,7 +18,6 @@ filetype off
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 
-    " TODO switch to ctrlp and manage with Vunlde
     Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
 
     Plugin 'airblade/vim-gitgutter'             " better editing files managed by git
