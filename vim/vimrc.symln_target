@@ -166,6 +166,9 @@ syntax on
 
     " regex to swap arguments
     nnoremap <silent> <leader>s :.s/(\(.*\),[ ]\(.*\))/(\2, \1)/<CR>:nohl<CR>
+
+    " can't seem to get a <D-v> mapping working, so use this for now
+    set pastetoggle=<F2>
 " }
 
 " Plugins()
