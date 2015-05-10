@@ -1,8 +1,6 @@
 #!/bin/sh
 
-###############################################################################
 # Finder
-###############################################################################
 
 echo ""
 echo "Displaying full POSIX path as Finder window title"
@@ -21,10 +19,6 @@ echo "Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input
-###############################################################################
- 
 echo ""
 echo "Increasing sound quality for Bluetooth headphones/headsets"
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -40,9 +34,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 echo ""
 echo "Setting a blazingly fast keyboard repeat rate (ain't nobody got time for special chars while coding!)"
 defaults write NSGlobalDomain KeyRepeat -int 0
-
-
-
 
 echo ""
 echo "Disable the sudden motion sensor as it's not useful for SSDs"
