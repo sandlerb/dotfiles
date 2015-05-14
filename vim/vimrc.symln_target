@@ -26,6 +26,7 @@ filetype off
     Plugin 'scrooloose/nerdtree'                " in vim file explorer
     Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
     Plugin 'Valloric/YouCompleteMe'             " code-completion engine
+    Plugin 'ConradIrwin/vim-bracketed-paste'    " auto :set paste
 
     " All of your plugins must be added before the following line
     call vundle#end()
