@@ -20,6 +20,9 @@ done
 
 unset config_files
 
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Preferred #
 export EDITOR='mvim -f -v'
 export VISUAL='mvim -f'
