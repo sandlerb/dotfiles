@@ -27,6 +27,8 @@ filetype off
     Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
     Plugin 'Valloric/YouCompleteMe'             " code-completion engine
     Plugin 'ConradIrwin/vim-bracketed-paste'    " auto :set paste
+    Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
+    Plugin 'cespare/vim-toml'                   " TOML syntax
 
     " All of your plugins must be added before the following line
     call vundle#end()
