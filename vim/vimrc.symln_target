@@ -29,6 +29,7 @@ filetype off
     Plugin 'ConradIrwin/vim-bracketed-paste'    " auto :set paste
     Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
     Plugin 'cespare/vim-toml'                   " TOML syntax
+    Plugin 'nvie/vim-flake8'                    " PEP8 syntax checking
 
     " All of your plugins must be added before the following line
     call vundle#end()
