@@ -23,6 +23,8 @@ unset config_files
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+ulimit -n 2048
+
 # Preferred #
 export EDITOR='mvim -f -v'
 export VISUAL='mvim -f'
