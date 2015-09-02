@@ -182,6 +182,9 @@ syntax on
         set background=dark
         colorscheme solarized
         let g:solarized_termtrans = 1
+
+        " Solarized doesn't enable italics in iTerm by default
+        highlight Comment cterm=italic
     " }
 
     " GitGutter()
