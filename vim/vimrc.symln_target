@@ -120,6 +120,7 @@ syntax on
     " essentials
     let mapleader="'"
     nnoremap ; :
+    vnoremap ; :
 
     " Escape
     inoremap jk <esc>
