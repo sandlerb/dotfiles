@@ -25,7 +25,6 @@ filetype off
     Plugin 'bling/vim-airline'                  " better status line
     Plugin 'scrooloose/nerdtree'                " in vim file explorer
     Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
-    Plugin 'Valloric/YouCompleteMe'             " code-completion engine
     Plugin 'ConradIrwin/vim-bracketed-paste'    " auto :set paste
     Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
     Plugin 'cespare/vim-toml'                   " TOML syntax
