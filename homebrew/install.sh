@@ -9,9 +9,13 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
 fi
 
-# Install
-brew install ack autoconf automake cmake coreutils ctags fontconfig gcc git \
-    git-extras go hidapi lcov libftdi libtool libusb libusb-compat ncurses \
-    openssl picocom splint valgrind vim wget zsh
+brew install autoconf automake brew-cask coreutils ctags gcc gdbm git \
+    git-extras glib gnutls go hidapi lcov libffi libftdi libsodium libtool \
+    libusb libusb-compat lua macvim mercurial mysql ncurses python qemu rust \
+    sl splint sqlite the_silver_searcher tree valgrind wget zsh picocom llvm
+
+brew cask install day-o macdown razer-synapse transmission vlc slack \
+    torbrowser wkhtmltopdf omndisksweeper iterm2 1password flux dropbox \
+    google-chrome skype
 
 exit 0
