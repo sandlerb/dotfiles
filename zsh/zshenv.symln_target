@@ -15,8 +15,6 @@ MICROCHIP_DIR="/Applications/microchip"
 MPLAB_IPE_RESOURCES="$MICROCHIP_DIR/mplabx/mplab_ipe.app/Contents/Resources"
 
 export PATH=$PATH:$MICROCHIP_DIR/xc8/v1.34/bin
-export PATH=$PATH:$MPLAB_IPE_RESOURCES/mplab_ipe/bin
-export PATH=$PATH:$MPLAB_IPE_RESOURCES/Java
 
 export FPATH=$FPATH:/Users/brett/.zsh/functions
 
