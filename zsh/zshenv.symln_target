@@ -12,9 +12,10 @@ export PATH=$PATH:/usr/local/heroku/bin
 #   1. XC8 compiler
 #   2. CLI for programming PIC microcontrollers
 MICROCHIP_DIR="/Applications/microchip"
-MPLAB_IPE_RESOURCES="$MICROCHIP_DIR/mplabx/mplab_ipe.app/Contents/Resources"
+MPLAB_IPE_CONTENTS="$MICROCHIP_DIR/mplabx/v3.10/mplab_ipe.app/Contents/Resources"
 
 export PATH=$PATH:$MICROCHIP_DIR/xc8/v1.34/bin
+export PATH=$PATH:$MPLAB_IPE_CONTENTS/Java
 
 export FPATH=$FPATH:/Users/brett/.zsh/functions
 
