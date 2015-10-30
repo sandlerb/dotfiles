@@ -12814,9 +12814,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>728 278 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>371 317 924 485 0 0 1440 900 </string>
+	<string>371 318 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 878 </string>
+	<string>331 1173 564 401 -335 800 1920 1200 </string>
 	<key>NeverWarnAboutShortLivedSessions_07E73FE0-94C1-4984-9DAA-D0DDB0B57767</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F066706B-9FE4-4340-8560-273C809E1F76</key>
@@ -13377,11 +13377,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>InconsolataForPowerline-dz 12</string>
+			<string>Inconsolata-dz 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hack 12</string>
+			<string>Hack-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -14292,10 +14292,12 @@
 			<string>/Users/brett</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453303824.07235098</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>464554460.66085398</real>
+	<real>465747746.34450698</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -14362,7 +14364,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-09-23T02:13:48Z</date>
+	<date>2015-10-05T20:17:31Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -14400,7 +14402,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>.Lucida Grande UI</string>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
