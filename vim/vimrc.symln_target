@@ -20,15 +20,16 @@ filetype off
 
     Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
 
-    Plugin 'airblade/vim-gitgutter'             " better editing files managed by git
-    Plugin 'altercation/vim-colors-solarized'   " better colors
-    Plugin 'bling/vim-airline'                  " better status line
-    Plugin 'scrooloose/nerdtree'                " in vim file explorer
-    Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
-    Plugin 'ConradIrwin/vim-bracketed-paste'    " auto :set paste
+    Plugin 'airblade/vim-gitgutter'             " Better editing files managed by git
+    Plugin 'altercation/vim-colors-solarized'   " Better colors
+    Plugin 'bling/vim-airline'                  " Better status line
+    Plugin 'scrooloose/nerdtree'                " In vim file explorer
+    Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file finder
+    Plugin 'ConradIrwin/vim-bracketed-paste'    " Auto :set paste
     Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
     Plugin 'cespare/vim-toml'                   " TOML syntax
     Plugin 'nvie/vim-flake8'                    " PEP8 syntax checking
+    Plugin 'rhysd/vim-clang-format'             " C formatting
 
     " All of your plugins must be added before the following line
     call vundle#end()
