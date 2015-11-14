@@ -6,7 +6,6 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/autoconif/2.69/share/autoconf
 export PATH=$PATH:/Library/Embedded/gcc-arm-none-eabi-4_8-2014q2/bin
-export PATH=$PATH:/usr/local/heroku/bin
 
 # Microchip
 #   1. XC8 compiler
@@ -22,4 +21,4 @@ export FPATH=$FPATH:/Users/brett/.zsh/functions
 export GOPATH=$HOME
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
-
+eval `/usr/libexec/path_helper -s`
