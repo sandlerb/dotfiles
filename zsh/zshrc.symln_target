@@ -26,8 +26,14 @@ source /usr/local/bin/virtualenvwrapper.sh
 ulimit -n 2048
 
 # Preferred #
-export EDITOR='mvim -f -v'
-export VISUAL='mvim -f'
+if [ "$(uname -s)" == "Darwin" ]
+then
+    export EDITOR='mvim -f -v'
+    export VISUAL='mvim -f'
+else
+    export EDITOR='vim -f'
+    export VISUAL='vim -f'
+fi
 
 # Compilation flags #
 export DEBUG=1
