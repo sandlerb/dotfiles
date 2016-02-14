@@ -4,8 +4,8 @@ git submodule update --init
 
 
 DOTFILES_ROOT=$(pwd)
+ln -s $DOTFILES_ROOT ~/.dotfiles
 
-mkdir ~/.dotfiles
 cd ~/.dotfiles
 
 info () {
