@@ -8,13 +8,13 @@ do
         "homebrew")
             echo "Proceeding with homebrew"
             source ../homebrew/install.sh
-            source bootstrap
+            source script/bootstrap
             break
             ;;
         "apt")
             echo "Proceeding with apt-get"
             source ./ubuntu_install.sh
-            source bootstrap
+            source script/bootstrap
             break
             ;;
         "quit")

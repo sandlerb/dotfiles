@@ -2,8 +2,11 @@
 
 git submodule update --init
 
-cd ~/.dotfiles
+
 DOTFILES_ROOT=$(pwd)
+
+mkdir ~/.dotfiles
+cd ~/.dotfiles
 
 info () {
     printf "  [ \033[00;34m..\033[0m ] $1"
