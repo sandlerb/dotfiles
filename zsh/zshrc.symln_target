@@ -26,11 +26,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 ulimit -n 2048
 
 # Preferred #
-if [ "$(uname -s)" == "Darwin" ]
-then
+if [[ "$(uname -s)" == "Darwin" ]]; then
     export EDITOR='mvim -f -v'
     export VISUAL='mvim -f'
-else
+elif [[ "$(uname -s)" == "Linux" ]]; then
     export EDITOR='vim -f'
     export VISUAL='vim -f'
 fi
