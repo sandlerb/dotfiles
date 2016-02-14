@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PS3='Which application manager would you like to us:'
+PS3='Which application manager would you like to us: '
 options=("homebrew" "apt-get" "Quit")
 select opt in "${options[@]}"
 do
