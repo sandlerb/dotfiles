@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#git submodule update --init
+git submodule update --init
 
 cd ~/.dotfiles
 DOTFILES_ROOT=$(pwd)
