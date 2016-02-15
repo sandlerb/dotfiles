@@ -241,4 +241,3 @@ syntax on
 " }
 
 nohl    "Don't highlight my last search everytime I source this
-:GitGutterDisable
