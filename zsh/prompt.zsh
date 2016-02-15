@@ -31,7 +31,7 @@ git_branch() {
 
 GIT_STAGED=" %{$fg[green]%}●%{$reset_color%}"
 GIT_UNSTAGED=" %{$fg[red]%}●%{$reset_color%}"
-GIT_UNTRACKED=" %{$fg[grey]%}●%{$reset_color%}"
+GIT_UNTRACKED=" %{$fg[blue]%}●%{$reset_color%}"
 
 git_staging_status() {
     staging=""
