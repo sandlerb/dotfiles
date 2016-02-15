@@ -22,7 +22,8 @@ filetype off
 
     Plugin 'airblade/vim-gitgutter'             " Better editing files managed by git
     Plugin 'altercation/vim-colors-solarized'   " Better colors
-    Plugin 'bling/vim-airline'                  " Better status line
+    Plugin 'vim-airline/vim-airline'            " Better status line
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'                " In vim file explorer
     Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file finder
     Plugin 'ConradIrwin/vim-bracketed-paste'    " Auto :set paste
@@ -221,7 +222,7 @@ syntax on
         " enable powerline symbols
         silent! let g:airline_powerline_fonts=1
         " slightly modified solarized
-        silent! let g:airline_them='solarized_brett'
+        silent! let g:airline_them='solarized'
         silent! let g:airline#extensions#tabline#enabled = 1
     " }
 
