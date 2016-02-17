@@ -9,5 +9,5 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     alias date='gdate'
 elif [[ "$(uname -s)" == "Linux" ]]; then
     alias vi="vim"
-    alias ls='ls --color=auto --group-directories-first -F'
+    alias ls='ls --color=auto -F'
 fi
