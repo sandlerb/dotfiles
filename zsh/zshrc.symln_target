@@ -34,6 +34,8 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
     export VISUAL='vim -f'
 fi
 
+bindkey -e
+
 # Compilation flags #
 export DEBUG=1
 
