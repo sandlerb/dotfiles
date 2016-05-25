@@ -8,10 +8,7 @@ set-window-option -g utf8 on
 # Tmux should be pretty, we need 256 color for that
 set -g default-terminal "screen-256color"
 
-
-# Tmux uses a 'control key', let's set it to 'Ctrl-a'
-# Reason: 'Ctrl-a' is easier to reach than 'Ctrl-b'
-set -g prefix C-a
+set -g prefix C-q
 unbind C-b
 
 # command delay? We don't want that, make it short
@@ -20,3 +17,22 @@ set -sg escape-time 1
 # Allow us to reload our Tmux configuration while
 # using Tmux
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+bind y run-shell "tmux show-buffer | xclip -sel clip -i" \; display-message "Copied tmux buffer to system clipboard"
+
+unbind C-o
+
+# Pane navigation
+bind C-h select-pane -L
+bind C-j select-pane -D
+bind C-k select-pane -U
+bind C-l select-pane -R
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Status bar color
+set -g status-bg black
+set -g status-fg green

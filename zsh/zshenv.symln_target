@@ -4,21 +4,5 @@
 #       i.e. only set env vars
 
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/Cellar/autoconif/2.69/share/autoconf
-export PATH=$PATH:/Library/Embedded/gcc-arm-none-eabi-4_8-2014q2/bin
-
-# Microchip
-#   1. XC8 compiler
-#   2. CLI for programming PIC microcontrollers
-MICROCHIP_DIR="/Applications/microchip"
-MPLAB_IPE_CONTENTS="$MICROCHIP_DIR/mplabx/v3.10/mplab_ipe.app/Contents/Resources"
-
-export PATH=$PATH:$MICROCHIP_DIR/xc8/v1.34/bin
-export PATH=$PATH:$MPLAB_IPE_CONTENTS/Java
-
 export FPATH=$FPATH:~/.zsh/functions
-
 export GOPATH=$HOME
-
-export ANDROID_HOME=/usr/local/opt/android-sdk
-eval `/usr/libexec/path_helper -s`

@@ -58,6 +58,7 @@ syntax on
         set mouse=a
         set clipboard=unnamed
         set encoding=utf-8
+        set fileencoding=utf-8
         set showcmd         " show whatever command we're typing
         set hidden          " hide buffers instead of closing them
         set ttyfast         " scroll faster
@@ -84,7 +85,7 @@ syntax on
     " {
         set fillchars+=vert:\ 
         set title
-        set colorcolumn=81,82
+        set colorcolumn=101,102
         set number
         set hlsearch
         set laststatus=2
@@ -238,6 +239,25 @@ syntax on
     " CtrlP() {
         let g:ctrlp_map = '<leader>t'
         let g:ctrlp_cmd = 'CtrlP'
+    " }
+
+    " vim-clang-format()
+    " {
+        " point to the right version
+        let g:clang_format#command="clang-format-3.6"
+
+        " Auto-detect a .clang-format file
+        let g:clang_format#detect_style_file=1
+
+        " This is a workaround for a bug in vim-clang-format that breaks insert mode when "auto_formatexpr" is set.
+        " If you don't care to use that feature (and you just want to call :ClangFormat instead, perhaps
+        " mapped to your leader key) this is not neccessary.
+        " See https://github.com/rhysd/vim-clang-format/issues/31
+        set textwidth=0
+
+        autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
+        autocmd FileType c,cpp vnoremap <buffer><leader>f :ClangFormat<CR>
+        autocmd FileType c,cpp inoremap <buffer><leader>f <Esc>:ClangFormat<CR>
     " }
 " }
 
