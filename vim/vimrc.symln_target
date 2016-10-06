@@ -238,13 +238,15 @@ syntax on
 
     " CtrlP() {
         let g:ctrlp_map = '<leader>t'
-        let g:ctrlp_cmd = 'CtrlP'
+        let g:ctrlp_match_window = 'bottom,order:ttb'         " order matching files top to bottom
+        let g:ctrlp_switch_buffer = 0                         " open files in a new buffer
+        let g:ctrlp_cmd = 'ag %s -l --nocolor --hidden -g ""' " use ag for searching
     " }
 
     " vim-clang-format()
     " {
         " point to the right version
-        let g:clang_format#command="clang-format-3.6"
+        let g:clang_format#command="clang-format-3.8"
 
         " Auto-detect a .clang-format file
         let g:clang_format#detect_style_file=1
