@@ -35,9 +35,6 @@ fi
 
 bindkey -e
 
-# Compilation flags #
-export DEBUG=1
-
 # colored man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;32;5;74m'  # begin bold
@@ -55,3 +52,6 @@ eval `dircolors ~/.dircolors`
 #
 # replace all instances in a directory
 #   find . -name "*.c" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

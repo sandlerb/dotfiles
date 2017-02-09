@@ -16,21 +16,28 @@ filetype off
 " {
     " Set the runtime path to include Vundle and initialize
     set rtp+=~/.vim/bundle/Vundle.vim
+    set rtp+=~/git/fzf
     call vundle#begin()
 
     Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
 
-    Plugin 'airblade/vim-gitgutter'             " Better editing files managed by git
+    " Aesthetics
     Plugin 'altercation/vim-colors-solarized'   " Better colors
     Plugin 'vim-airline/vim-airline'            " Better status line
     Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'scrooloose/nerdtree'                " In vim file explorer
-    Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file finder
-    Plugin 'ConradIrwin/vim-bracketed-paste'    " Auto :set paste
+    Plugin 'airblade/vim-gitgutter'             " Better editing files managed by git
+
+    " Syntax
     Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
     Plugin 'cespare/vim-toml'                   " TOML syntax
     Plugin 'nvie/vim-flake8'                    " PEP8 syntax checking
+    Plugin 'scrooloose/syntastic'               " Syntax checking
     Plugin 'rhysd/vim-clang-format'             " C formatting
+
+    " Utilities
+    Plugin 'scrooloose/nerdtree'                " In vim file explorer
+    Plugin 'ConradIrwin/vim-bracketed-paste'    " Auto :set paste
+    Plugin 'junegunn/fzf.vim'                   " Fuzzy file finder
 
     " All of your plugins must be added before the following line
     call vundle#end()
@@ -236,11 +243,28 @@ syntax on
         map <F1> :NERDTreeToggle<CR>
     " }
 
-    " CtrlP() {
-        let g:ctrlp_map = '<leader>t'
-        let g:ctrlp_match_window = 'bottom,order:ttb'         " order matching files top to bottom
-        let g:ctrlp_switch_buffer = 0                         " open files in a new buffer
-        let g:ctrlp_cmd = 'ag %s -l --nocolor --hidden -g ""' " use ag for searching
+    " fzf() {
+        let g:fzf_layout = { 'down' : '40%' }
+
+        map <leader>t :FZF<CR>
+    " }
+
+    " syntastic() {
+        let g:syntastic_enable_signs=1
+        let g:syntastic_python_checkers=['flake8']
+        let g:syntastic_python_flake8_args = "--max-line-length=120"
+        let g:syntastic_c_include_dirs = ['source', '/usr/include']
+        let g:syntastic_cpp_include_dirs = ['source', 'build/source', '/usr/include']
+        let g:syntastic_cpp_compiler = 'clang++-3.8'
+        let g:syntastic_cpp_compiler_options = '-std=c++11'
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 0
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 0
+    " }
+    
+    " vim-flake8() {
+        let g:flake8_max_line_length = 120
     " }
 
     " vim-clang-format()
