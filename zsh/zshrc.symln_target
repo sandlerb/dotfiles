@@ -46,6 +46,8 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 export TERM=xterm-256color
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 eval `dircolors ~/.dircolors`
 
 # Notes

@@ -16,7 +16,7 @@ filetype off
 " {
     " Set the runtime path to include Vundle and initialize
     set rtp+=~/.vim/bundle/Vundle.vim
-    set rtp+=~/git/fzf
+    set rtp+=~/.fzf
     call vundle#begin()
 
     Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle
@@ -83,6 +83,7 @@ syntax on
         set softtabstop=4
         set backspace=indent,eol,start
         set autoindent
+        set formatoptions=rqljo
 
         " Recognize .md files as markdown
         au BufRead,BufNewFile *.md set filetype=markdown
@@ -246,7 +247,7 @@ syntax on
     " fzf() {
         let g:fzf_layout = { 'down' : '40%' }
 
-        map <leader>t :FZF<CR>
+        map <leader>t :Files<CR>
     " }
 
     " syntastic() {
@@ -263,10 +264,6 @@ syntax on
         let g:syntastic_check_on_wq = 0
     " }
     
-    " vim-flake8() {
-        let g:flake8_max_line_length = 120
-    " }
-
     " vim-clang-format()
     " {
         " point to the right version
