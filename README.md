@@ -14,13 +14,6 @@ symlinked as `$HOME/.{file}`.
 ### These are not my dotfiles
 Much of this is from [@holman][@1]'s [dotfiles][l1] and I also like to pinch a line or three from [@peplin][@2]'s [dotfiles][l2].  Some of the comments and base files are from [prezto][l3].
 
-### TODO
-* symlink /etc/ zsh files
-* clean up whitespace
-* clean up files pulled in from Prezto
-* integrate mackup so it doesn't symlink everything to DropBox
-
-
 [@1]: https://github.com/holman
 [@2]: https://github.com/peplin
 

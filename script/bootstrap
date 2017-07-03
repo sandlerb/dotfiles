@@ -1,7 +1,17 @@
 #!/bin/bash
 
-git submodule update --init
+# Make sure we're in the actual dotfiles root, otherwise the installation will fail.  Could do this
+# smarter than a prompt
+while true; do
+    read -p "Installation must be run from the dotfiles root directory, are you there?" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "what?";;
+    esac
+done
 
+git submodule update --init
 
 DOTFILES_ROOT=$(pwd)
 ln -s $DOTFILES_ROOT ~/.dotfiles
