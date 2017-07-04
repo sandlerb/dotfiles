@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# vt$XDG_VTNR is used to specify that Xorg has to be started on
+# the same virtual terminal where the login occured.  this is important
+# so that xorg maintains an authenticated session with logind
+exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR

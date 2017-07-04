@@ -16,16 +16,48 @@ set $mod Mod4
 # Appearance #################################################################
 #
 
+# Pull colors in from Xresources, fallback set to when I added this
+set_from_resource $yellow   color3    #b58900
+set_from_resource $orange   color9    #cb4b16
+set_from_resource $red      color1    #dc322f
+set_from_resource $magenta  color5    #d33682
+set_from_resource $violet   color13   #6c71c4
+set_from_resource $blue     color4    #268bd2
+set_from_resource $cyan     color6    #2aa198
+set_from_resource $green    color2    #859900
+set_from_resource $base03   color8    #002b36
+set_from_resource $base02   color0    #073642
+set_from_resource $base01   color10   #586e75
+set_from_resource $base00   color11   #657b83
+set_from_resource $base0    color12   #839496
+set_from_resource $base1    color14   #93a1a1
+set_from_resource $base2    color7    #eee8d5
+set_from_resource $base3    color15   #fdf6e3
+
+# Window colors
+#                       Border        Background    Text     Indicator  Child Border
+client.focused          $base03       $base01       $base1   $base01    $base01
+client.unfocused        $base03       $base03       $base00  $base03    $base03
+client.focused_inactive $base03       $base02       $base00  $base02    $base02
+client.urgent           $red          $red          $base1   $red       $red
+client.background       $base03
+
+# Make the background slightly less contrasting
+exec --no-startup-id xsetroot -solid "#000d12"
+
 # Disable window titlebars so that i3-gaps' gaps work correctly
 for_window [class="^.*"] border pixel 2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Inconsolata 9
+font pango:Hack 9
 
 # Gaps
 gaps inner 5
 gaps outer 5
+
+# Only show a border if the container is the only one on the screen
+smart_borders on
 
 #
 # Usability ##################################################################
@@ -34,8 +66,12 @@ gaps outer 5
 # Disable focus following the mouse, prefer keyboard and clicking
 focus_follows_mouse no
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# Create a scratchpad on startup
+exec --no-startup-id urxvt -name __scratchpad
+for_window [class="URxvt" instance="__scratchpad"] move scratchpad
 
 #
 # Bindings ###################################################################
@@ -76,12 +112,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -92,9 +122,13 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-# Easier moving between workspaces
-bindsym $mod+Shift+l workspace next
-bindsym $mod+Shift+h workspace prev
+# Easier switching between workspaces
+bindsym $mod+Shift+$right workspace next
+bindsym $mod+Shift+$left workspace prev
+
+# Easier moving between workspaces, with follow (Mod1 is either Alt key)
+bindsym $mod+Mod1+$right move container to workspace next; workspace next
+bindsym $mod+Mod1+$left move container to workspace prev; workspace prev
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -137,16 +171,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+        bindsym $left       resize shrink width 2 px or 2 ppt
+        bindsym $down       resize grow height 2 px or 2 ppt
+        bindsym $up         resize shrink height 2 px or 2 ppt
+        bindsym $right      resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
