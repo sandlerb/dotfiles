@@ -43,17 +43,17 @@ client.urgent           $red          $red          $base1   $red       $red
 client.background       $base03
 
 # Make the background slightly less contrasting
-exec --no-startup-id xsetroot -solid "#000d12"
+exec --no-startup-id xsetroot -solid "#002b36"
 
 # Disable window titlebars so that i3-gaps' gaps work correctly
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Hack 9
 
 # Gaps
-gaps inner 5
+gaps inner 2
 gaps outer 3
 
 # Only show a border if the container is the only one on the screen
