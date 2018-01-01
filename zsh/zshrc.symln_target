@@ -55,5 +55,6 @@ eval `dircolors ~/.dircolors`
 # replace all instances in a directory
 #   find . -name "*.c" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'
 
+xset r rate 200 30
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
