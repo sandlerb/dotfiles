@@ -36,7 +36,7 @@ set_from_resource $base3    color15   #fdf6e3
 
 # Window colors
 #                       Border        Background    Text     Indicator  Child Border
-client.focused          $base03       $base01       $base1   $base01    $base01
+client.focused          $base03       $base01       $base1   $base02    $base01
 client.unfocused        $base03       $base03       $base00  $base03    $base03
 client.focused_inactive $base03       $base02       $base00  $base02    $base02
 client.urgent           $red          $red          $base1   $red       $red
@@ -54,7 +54,7 @@ font pango:Hack 9
 
 # Gaps
 gaps inner 5
-gaps outer 5
+gaps outer 3
 
 # Only show a border if the container is the only one on the screen
 smart_borders on
@@ -99,10 +99,10 @@ bindsym $mod+Ctrl+$up move up
 bindsym $mod+Ctrl+$right move right
 
 # split in horizontal orientation
-bindsym $mod+' split h
+bindsym $mod+y split horizontal
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -123,8 +123,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Easier switching between workspaces
-bindsym $mod+Shift+$right workspace next
-bindsym $mod+Shift+$left workspace prev
+bindsym $mod+Shift+$right workspace next; exec --no-startup-id ~/.i3/lemonbar/update.py
+bindsym $mod+Shift+$left workspace prev; exec --no-startup-id ~/.i3/lemonbar/update.py
 
 # Easier moving between workspaces, with follow (Mod1 is either Alt key)
 bindsym $mod+Mod1+$right move container to workspace next; workspace next
@@ -189,11 +189,4 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# TODO
-#   have a lemonbar_loop.sh that runs here that is just a while loop around lemonbar_update.sh.
-#   That way we can call lemonbar_update.sh from other places where we want async update
-bar {
-        status_command i3status
-}
+exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
