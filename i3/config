@@ -38,7 +38,7 @@ set_from_resource $base3    color15   #fdf6e3
 #                       Border        Background    Text     Indicator  Child Border
 client.focused          $base03       $base01       $base1   $base02    $base01
 client.unfocused        $base03       $base03       $base00  $base03    $base03
-client.focused_inactive $base03       $base02       $base00  $base02    $base02
+client.focused_inactive $base03       $base02       $base00  $base03    $base03
 client.urgent           $red          $red          $base1   $red       $red
 client.background       $base03
 
@@ -52,12 +52,9 @@ for_window [class="^.*"] border pixel 4
 # is used in the bar {} block below.
 font pango:Hack 9
 
-# Gaps
-gaps inner 2
-gaps outer 3
-
 # Only show a border if the container is the only one on the screen
 smart_borders on
+smart_gaps on
 
 #
 # Usability ##################################################################
