@@ -23,20 +23,13 @@ filetype off
 
     " Aesthetics
     Plugin 'altercation/vim-colors-solarized'   " Better colors
-    Plugin 'vim-airline/vim-airline'            " Better status line
-    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'airblade/vim-gitgutter'             " Better editing files managed by git
 
     " Syntax
-    Plugin 'rust-lang/rust.vim'                 " Rust syntax and file recog
-    Plugin 'cespare/vim-toml'                   " TOML syntax
     Plugin 'nvie/vim-flake8'                    " PEP8 syntax checking
-    Plugin 'scrooloose/syntastic'               " Syntax checking
-    Plugin 'rhysd/vim-clang-format'             " C formatting
+    Plugin 'rhysd/vim-clang-format'             " C/C++ formatting
 
     " Utilities
-    Plugin 'scrooloose/nerdtree'                " In vim file explorer
-    Plugin 'ConradIrwin/vim-bracketed-paste'    " Auto :set paste
     Plugin 'junegunn/fzf.vim'                   " Fuzzy file finder
 
     " All of your plugins must be added before the following line
@@ -98,6 +91,7 @@ syntax on
         set hlsearch
         set laststatus=2
         set cursorline
+        set matchpairs+=<:>
     " }
 
     " Search_And_Replace()
@@ -117,12 +111,6 @@ syntax on
         set wildmenu
         set wildmode=list:longest
         set wildignore=*.pyc,*.d,*.o,*.gcno
-    " }
-
-    " Folding()
-    " {
-        set foldmethod=syntax
-        set nofoldenable
     " }
 " }
 
@@ -167,15 +155,8 @@ syntax on
     noremap <c-k> <c-w>k
     noremap <c-l> <c-w>l
 
-    " cycle windows
-    nnoremap = <c-w>w
-
     " rotate windows
     nnoremap <leader>r <c-w><c-r>
-
-    " help I don't have page up or down keys
-    noremap <F8> <PageDown>
-    noremap <F9> <PageUp>
 
     " Shortcut to jump to next conflict marker
     nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
@@ -192,56 +173,35 @@ syntax on
     " Solarized()
     " {
         set background=dark
+        let t_Co=256
         colorscheme solarized
-        let &t_Co=256
         let g:solarized_termtrans = 1
-
-        " Solarized doesn't enable italics in iTerm by default
-        " highlight Comment cterm=italic
     " }
 
     " GitGutter()
     " {
         " Show at most this many signs (don't want to slow vim down)
         let g:gitgutter_max_signs = 300
+
         " match the SignColumn bg color to the number column
         highlight SignColumn ctermbg=0
         highlight GitGutterAdd ctermbg=0 ctermfg=DarkGreen
         highlight GitGutterDelete ctermbg=0 ctermfg=DarkRed
         highlight GitGutterChange ctermbg=0 ctermfg=DarkYellow
         highlight GitGutterChangeDelete ctermbg=0 ctermfg=DarkMagenta
+
         " use some thicker symbols so the color really ~shines~
         let g:gitgutter_sign_added='✚'
         let g:gitgutter_sign_removed='✖'
         let g:gitgutter_sign_modified='✱'
         let g:gitgutter_sign_modified_removed='↪'
+
         " always show sign column
         let g:gitgutter_sign_column_always=1
+
         " map jumping to changed hunks
         nnoremap <leader>g :GitGutterNextHunk<CR>
         nnoremap <leader><leader>g :GitGutterPrevHunk<CR>
-    " }
-
-    " Vim-Airline()
-    " {
-        " check for airline symbols
-        if !exists('g:airline_symbols')
-            let g:airline_symbols = {}
-        endif
-
-        " enable powerline symbols
-        silent! let g:airline_powerline_fonts=1
-        " slightly modified solarized
-        silent! let g:airline_them='solarized'
-        silent! let g:airline#extensions#tabline#enabled = 1
-    " }
-
-    " NERDTree()
-    " {
-        " close if only window left on exit
-        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
-
-        map <F1> :NERDTreeToggle<CR>
     " }
 
     " fzf() {
@@ -250,33 +210,13 @@ syntax on
         map <leader>t :Files<CR>
     " }
 
-    " syntastic() {
-        let g:syntastic_enable_signs=1
-        let g:syntastic_python_checkers=['flake8']
-        let g:syntastic_python_flake8_args = "--max-line-length=120"
-        let g:syntastic_c_include_dirs = ['source', '/usr/include']
-        let g:syntastic_cpp_include_dirs = ['source', 'build/source', '/usr/include']
-        let g:syntastic_cpp_compiler = 'clang++-3.8'
-        let g:syntastic_cpp_compiler_options = '-std=c++11'
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 0
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
-    " }
-    
     " vim-clang-format()
     " {
         " point to the right version
-        let g:clang_format#command="clang-format-3.8"
+        let g:clang_format#command="clang-format"
 
         " Auto-detect a .clang-format file
         let g:clang_format#detect_style_file=1
-
-        " This is a workaround for a bug in vim-clang-format that breaks insert mode when "auto_formatexpr" is set.
-        " If you don't care to use that feature (and you just want to call :ClangFormat instead, perhaps
-        " mapped to your leader key) this is not neccessary.
-        " See https://github.com/rhysd/vim-clang-format/issues/31
-        set textwidth=0
 
         autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
         autocmd FileType c,cpp vnoremap <buffer><leader>f :ClangFormat<CR>
